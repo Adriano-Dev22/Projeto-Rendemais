@@ -7,9 +7,15 @@ O Veskan é uma plataforma digital que calcula e apresenta, de forma simples e p
 ---
 ## 🌐 MVP ao vivo
 
-Acesse o Veskan agora mesmo:
+<div align="center">
 
-**👉 [projeto-rendemais.vercel.app](https://projeto-rendemais.vercel.app)**
+### 🚀 [Acessar o Veskan](https://projeto-rendemais.vercel.app)
+
+![Status](https://img.shields.io/badge/status-ao%20vivo-brightgreen?style=for-the-badge)
+![Vercel](https://img.shields.io/badge/hospedado%20na-Vercel-black?style=for-the-badge&logo=vercel)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+</div>
 ---
 
 
