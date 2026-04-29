@@ -5,6 +5,13 @@
 O Veskan é uma plataforma digital que calcula e apresenta, de forma simples e precisa, a **rentabilidade real** dos investimentos ao longo do tempo — descontando inflação, impostos e taxas operacionais. Diferente das ferramentas tradicionais, o Veskan não mostra apenas números isolados: ele entrega ao usuário uma visão completa e realista da sua performance financeira.
 
 ---
+## 🌐 MVP ao vivo
+
+Acesse o Veskan agora mesmo:
+
+**👉 [projeto-rendemais.vercel.app](https://projeto-rendemais.vercel.app)**
+---
+
 
 ## 🎯 O problema que resolvemos
 
