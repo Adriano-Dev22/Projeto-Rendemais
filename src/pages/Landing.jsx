@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom'
+
 function Landing() {
+  const navigate = useNavigate()
+
   return (
     <div className="min-h-screen bg-gray-950 text-white">
 
@@ -30,11 +34,13 @@ function Landing() {
           <span className="text-emerald-400"> realmente rende</span>
         </h1>
         <p className="text-gray-400 text-lg max-w-xl mb-10">
-          O Veskan calcula sua rentabilidade real — descontando inflação, impostos e taxas. 
+          O Veskan calcula sua rentabilidade real — descontando inflação, impostos e taxas.
           Sem enrolação, sem letra miúda.
         </p>
         <div className="flex gap-4">
-          <button className="bg-emerald-500 hover:bg-emerald-400 transition text-black font-semibold px-6 py-3 rounded-lg text-sm">
+          <button
+            onClick={() => navigate('/simulador')}
+            className="bg-emerald-500 hover:bg-emerald-400 transition text-black font-semibold px-6 py-3 rounded-lg text-sm">
             Simular agora — é grátis
           </button>
           <button className="border border-gray-700 hover:border-gray-500 transition text-gray-300 px-6 py-3 rounded-lg text-sm">
