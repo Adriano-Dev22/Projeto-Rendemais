@@ -1,10 +1,6 @@
-// ============================================
-// API DO BANCO CENTRAL DO BRASIL
-// ============================================
+const BCB = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs'
 
-const BCB = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs' //Ainda vou colocar
-
-// Busca IPCA acumulado dos últimos 12 meses
+// IPCA acumulado 12 meses — série 433
 export async function buscarIPCA() {
   try {
     const res = await fetch(`${BCB}.433/dados/ultimos/12?formato=json`)
@@ -14,20 +10,17 @@ export async function buscarIPCA() {
     ) - 1
     return parseFloat((acumulado * 100).toFixed(2))
   } catch {
-    return 4.5 // Valor padrão se a API falhar
+    return 4.14
   }
 }
 
-// Busca CDI acumulado dos últimos 252 dias úteis
+// CDI anual — série 4389 (taxa anual já pronta)
 export async function buscarCDI() {
   try {
-    const res = await fetch(`${BCB}.12/dados/ultimos/252?formato=json`)
+    const res = await fetch(`${BCB}.4389/dados/ultimos/1?formato=json`)
     const dados = await res.json()
-    const acumulado = dados.reduce(
-      (acc, d) => acc * (1 + parseFloat(d.valor) / 100), 1
-    ) - 1
-    return parseFloat((acumulado * 100).toFixed(2))
+    return parseFloat(parseFloat(dados[0].valor).toFixed(2))
   } catch {
-    return 10.65 // Valor padrão se a API falhar
+    return 10.65
   }
 }

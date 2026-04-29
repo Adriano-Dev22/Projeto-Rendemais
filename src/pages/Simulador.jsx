@@ -1,5 +1,7 @@
+import { useEffect } from 'react'
 import { useCalculator } from '../hooks/useCalculator'
 import { formatarMoeda, formatarPorcentagem } from '../utils/calculator'
+import { buscarIPCA, buscarCDI } from '../utils/bcbApi'
 import {
   LineChart, Line, XAxis, YAxis, Tooltip,
   ResponsiveContainer, Legend
@@ -8,6 +10,17 @@ import {
 function Simulador() {
   const { params, atualizar, resultadoBasico } = useCalculator()
   const { montante, rendimentoNominal, perdaInflacao, ganhoReal, taxaRealAnual, historico } = resultadoBasico
+
+  // Busca IPCA e CDI reais do Banco Central ao carregar a página
+  useEffect(() => {
+    async function carregarDadosMercado() {
+      const ipca = await buscarIPCA()
+      const cdi = await buscarCDI()
+      atualizar('ipca', ipca)
+      console.log(`IPCA atual: ${ipca}% | CDI atual: ${cdi}%`)
+    }
+    carregarDadosMercado()
+  }, [])
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
@@ -83,7 +96,12 @@ function Simulador() {
             {/* IPCA */}
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-sm text-gray-400">Inflação (IPCA)</label>
+                <label className="text-sm text-gray-400">
+                  Inflação (IPCA)
+                  <span className="ml-2 text-xs text-emerald-500/70 font-normal">
+                    atualizado automaticamente
+                  </span>
+                </label>
                 <span className="text-sm font-semibold text-emerald-400">
                   {formatarPorcentagem(params.ipca)}
                 </span>
