@@ -1,1 +1,51 @@
-@import "tailwindcss";
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0B1629;
+  --navy-mid: #1A3050;
+  --navy-light: #243d63;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-glow: rgba(201,168,76,0.12);
+  --bg: #F5F6F8;
+  --bg-white: #ffffff;
+  --border: #E2E6ED;
+  --text-primary: #0B1629;
+  --text-secondary: #4a5568;
+  --text-tertiary: #9ca3af;
+  --shadow-sm: 0 1px 4px rgba(11,22,41,0.06);
+  --shadow-md: 0 4px 20px rgba(11,22,41,0.10);
+  --shadow-lg: 0 20px 60px rgba(11,22,41,0.14);
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+html {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute; top: -100px; left: 16px;
+  background: var(--gold); color: var(--navy);
+  padding: 8px 16px; border-radius: 8px;
+  font-weight: 600; font-size: 14px; z-index: 9998;
+  transition: top .2s;
+}
+.skip-link:focus { top: 16px; }
