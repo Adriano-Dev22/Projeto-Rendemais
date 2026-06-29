@@ -5,9 +5,9 @@ import Landing from './pages/Landing'
 import Simulador from './pages/Simulador'
 import Login from './pages/Login'
 import Cadastro from './pages/Cadastro'
-import Dashboard from './pages/Dashboard'
+import Dashboard from "./pages/dashboard";
 import ProtectedRoute from './components/ProtectedRoute'
-import logoImg from './assets/logo.png'
+import logoImg from "./assets/Logo.png";
 
 function TitleManager() {
   const location = useLocation()
